@@ -15,6 +15,11 @@ export function TaskList() {
   const [newTaskTitle, setNewTaskTitle] = useState('');
 
   function handleCreateNewTask() {
+    if(newTaskTitle === ''){
+      console.log('Preencha o campos')
+      return false
+    }
+
     setTasks([...tasks, {
       id: new Date().getTime(),
       title: newTaskTitle,
